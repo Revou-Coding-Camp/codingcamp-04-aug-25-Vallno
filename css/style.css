@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Jost", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(../images/langit.jpg) no-repeat center center/cover;
+}
+
+.container {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.todo-app {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 3px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 0 50px rgba(0,0,0,0.3);
+    color: white;
+}
+
+.todo-app h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.stat-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.progress-bar {
+    width: 180px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#progress {
+    height: 100%;
+    width: 0%;
+    background: #ff6f91;
+    transition: width 0.3s ease;
+}
+
+#numbers {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #ff6f91;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.input-area {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.input-area input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.input-area button {
+    margin-left: 10px;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    color: white;
+}
+
+
+.filter-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+    gap: 8px;
+}
+
+.filter-btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 0.9rem;
+    transition: background 0.2s ease;
+}
+
+.filter-btn:hover {
+    background: #ff6f91;
+}
+
+.filter-btn.active {
+    background: #ff6f91;
+    font-weight: bold;
+}
+
+.todos-container {
+    width: 100%;
+}
+
+#task-list {
+    list-style: none;
+}
+
+#task-list li {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    margin-bottom: 10px;
+    border-radius: 20px;
+    padding: 8px 12px;
+}
+
+
+.task-checkbox {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.task-checkbox:checked {
+    background-color: #ff6f91;
+    border-color: #ff6f91;
+}
+
+.task-checkbox:checked::before {
+    content: '\2713';
+    color: white;
+    font-size: 14px;
+}
+
+
+#task-list li.completed span {
+    color: inherit;
+}
+
+.task-buttons {
+    margin-left: auto;
+    display: flex;
+    gap: 5px;
+}
+
+.task-buttons button {
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#task-list li.completed span {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.filter-all #task-list li.completed span {
+    text-decoration: line-through;
+    color: rgba(0,0,0,0.85); 
+}
+
+
+.delete-btn {
+    background: #ff6f91;
+    color: white;
+}
+
+.edit-btn {
+    background: gold;
+    color: black;
+}
