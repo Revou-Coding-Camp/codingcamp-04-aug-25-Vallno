@@ -74,11 +74,26 @@ body {
 
 .input-area {
     display: flex;
+    align-items: center;
+    gap: 8px;
     margin-bottom: 15px;
+    flex-wrap: nowrap; /* Semua tetap 1 baris di layar besar */
 }
 
-.input-area input {
-    flex: 1;
+.input-area input[type="text"] {
+    flex: 2; /* Lebar utama */
+    min-width: 0; /* Mencegah meluber */
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.input-area input[type="date"] {
+    flex: 1; /* Lebih kecil dari teks */
+    min-width: 0;
     padding: 10px;
     border: none;
     border-radius: 20px;
@@ -88,7 +103,7 @@ body {
 }
 
 .input-area button {
-    margin-left: 10px;
+    flex-shrink: 0; /* Tombol + tetap ukuran tetap */
     padding: 10px 14px;
     border: none;
     border-radius: 50%;
@@ -97,7 +112,7 @@ body {
     color: white;
 }
 
-
+/* Filter Buttons */
 .filter-container {
     display: flex;
     justify-content: center;
@@ -125,10 +140,7 @@ body {
     font-weight: bold;
 }
 
-.todos-container {
-    width: 100%;
-}
-
+/* Task List */
 #task-list {
     list-style: none;
 }
@@ -142,7 +154,7 @@ body {
     padding: 8px 12px;
 }
 
-
+/* Checkbox */
 .task-checkbox {
     appearance: none;
     width: 20px;
@@ -150,11 +162,10 @@ body {
     border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 50%;
     cursor: pointer;
-    position: relative;
-    margin-right: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 10px;
 }
 
 .task-checkbox:checked {
@@ -168,11 +179,34 @@ body {
     font-size: 14px;
 }
 
-
-#task-list li.completed span {
-    color: inherit;
+/* Task Info */
+.task-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    overflow: hidden;
 }
 
+.task-info span {
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.task-info small {
+    font-size: 0.75rem;
+    opacity: 0.8;
+    color: #ddd;
+}
+
+/* Completed Style */
+.filter-all #task-list li.completed span {
+    text-decoration: line-through;
+    color: rgba(0,0,0,0.85); 
+}
+
+/* Buttons */
 .task-buttons {
     margin-left: auto;
     display: flex;
@@ -189,18 +223,6 @@ body {
     align-items: center;
     cursor: pointer;
 }
-
-#task-list li.completed span {
-    text-decoration: none;
-    color: inherit;
-}
-
-
-.filter-all #task-list li.completed span {
-    text-decoration: line-through;
-    color: rgba(0,0,0,0.85); 
-}
-
 
 .delete-btn {
     background: #ff6f91;

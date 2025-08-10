@@ -12,6 +12,7 @@
         <div class="todo-app">
             <h1>To-Do App</h1>
 
+            <!-- Progress Info -->
             <div class="stat-container">
                 <div class="details">
                     <h3>Keep it Up!</h3>
@@ -22,8 +23,10 @@
                 <div id="numbers">0 / 0</div>
             </div>
 
+            <!-- Input Area -->
             <form class="input-area" id="input-area">
                 <input type="text" id="teks-input" placeholder="Add a new task...">
+                <input type="date" id="date-input">
                 <button type="submit" id="add-task-btn"><i class="fa-solid fa-plus"></i></button>
             </form>
 
@@ -31,9 +34,10 @@
             <div class="filter-container">
                 <button class="filter-btn active" data-filter="all">All</button>
                 <button class="filter-btn" data-filter="active">Not Yet</button>
-                <button class="filter-btn" data-filter="completed">finished</button>
+                <button class="filter-btn" data-filter="completed">Finished</button>
             </div>
 
+            <!-- Task List -->
             <div class="todos-container">
                 <ul id="task-list"></ul>
             </div>
